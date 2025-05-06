@@ -1,3 +1,6 @@
+# Segunda parte da atividade avaliativa da disciplina de Teste e Qualidade de Software.
+# Comentário TESTE.
+
 def calcular_preco_total(idade, quantidade):
     if quantidade < 1 or quantidade > 5:
         return "Erro: A quantidade de bilhetes deve ser entre 1 e 5."
