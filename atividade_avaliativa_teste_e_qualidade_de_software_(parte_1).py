@@ -12,6 +12,9 @@ def calcular_preco_total(idade, quantidade):
     preco_total = preco_unitario * quantidade
     return round(preco_total, 2)
 
+# Comentário teste.
+# :) 
+
 import unittest
 
 class TesteCompleto(unittest.TestCase):
