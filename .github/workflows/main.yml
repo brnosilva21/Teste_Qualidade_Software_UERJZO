@@ -1,0 +1,19 @@
+name: Executar Testes Automatizados
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4  
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'  
+
+      - name: Executar testes
+        run: python -m unittest testes.py  
