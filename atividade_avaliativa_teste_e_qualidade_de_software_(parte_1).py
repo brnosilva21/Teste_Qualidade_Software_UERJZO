@@ -12,6 +12,8 @@ def calcular_preco_total(idade, quantidade):
     preco_total = preco_unitario * quantidade
     return round(preco_total, 2)
 
+# Comentário teste.
+
 import unittest
 
 class TesteCompleto(unittest.TestCase):
@@ -33,30 +35,30 @@ class TesteCompleto(unittest.TestCase):
         self.assertEqual(calcular_preco_total(25, 3), 90.0)
 
     def test_quantidade_invalida_abaixo(self):
-        self.assertEqual(calcular_preco_total(25, 0), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
+        self.assertEqual(calcular_preco_total(25, 1), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
 
     def test_quantidade_invalida_acima(self):
-        self.assertEqual(calcular_preco_total(25, 6), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
+        self.assertEqual(calcular_preco_total(25, 5), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
 
     # 3. Tipo por idade (conjuntos)
     def test_conjunto_valido_crianca(self):
         self.assertEqual(calcular_preco_total(10, 2), 20.0)
 
     def test_conjunto_invalido_string(self):
-        self.assertEqual(calcular_preco_total("dez", 2), "Erro: Os valores devem ser inteiros.")
+        self.assertEqual(calcular_preco_total(10, 2), "Erro: Os valores devem ser inteiros.")
 
     def test_conjunto_invalido_none(self):
-        self.assertEqual(calcular_preco_total(None, 2), "Erro: Os valores devem ser inteiros.")
+        self.assertEqual(calcular_preco_total(10, 2), "Erro: Os valores devem ser inteiros.")
 
     # 4. Condição específica: quantidade 1–5
     def test_condicao_especifica_valida(self):
         self.assertEqual(calcular_preco_total(40, 5), 150.0)
 
     def test_condicao_especifica_invalida_abaixo(self):
-        self.assertEqual(calcular_preco_total(40, -1), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
+        self.assertEqual(calcular_preco_total(40, 1), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
 
     def test_condicao_especifica_invalida_acima(self):
-        self.assertEqual(calcular_preco_total(40, 10), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
+        self.assertEqual(calcular_preco_total(40, 1), "Erro: A quantidade de bilhetes deve ser entre 1 e 5.")
 
     # === ANÁLISE DE VALORES LIMITES ===
 
